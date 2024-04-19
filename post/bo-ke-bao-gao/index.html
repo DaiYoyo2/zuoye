@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>博客报告 | Gridea</title>
+<link rel="shortcut icon" href="https://daiyoyo2.github.io/zuoye//favicon.ico?v=1713506195594">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://daiyoyo2.github.io/zuoye//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="博客报告 | Gridea - Atom Feed" href="https://daiyoyo2.github.io/zuoye//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="本博客是使用gridea框架生成的一系列静态网页。包括了五个页面，其中一个是总的主页，另外四个分别是作业报告、课程学习感悟、压榨产业链介绍、资产定价介绍。后两个文章是本人最近的研究方向，文章用通俗的语言和简单的例子向大众介绍了这两个课题。
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://daiyoyo2.github.io/zuoye/">
+  <img class="avatar" src="https://daiyoyo2.github.io/zuoye//images/avatar.png?v=1713506195594" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://daiyoyo2.github.io/zuoye/" class="menu">
+          首页
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              博客报告
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-04-16
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>本博客是使用gridea框架生成的一系列静态网页。包括了五个页面，其中一个是总的主页，另外四个分别是作业报告、课程学习感悟、压榨产业链介绍、资产定价介绍。后两个文章是本人最近的研究方向，文章用通俗的语言和简单的例子向大众介绍了这两个课题。</p>
+<p>在配置博客的过程中，遇到最大的两个问题是环境配置问题还有网络问题。<br>
+我尝试了像Jekyll这样的框架，但是环境配置非常麻烦，经常有依赖没有装上。另外，有些依赖在下载的时候会遇到网络问题，进度卡在百分之零不动。</p>
+<p>另外也尝试了Hexo，但是在根据教程走的时候，遇到了nodejs和npm版本对不齐的问题，尝试了很久都没有找到简洁的解决办法，于是放弃了这个框架。</p>
+<p>最终选择了使用云主机加Gridea框架来实现这个博客。</p>
+<p>实践发现云主机可以解决大多数的网络问题。云上网络环境更好，连外面的网站也能连上。而针对依赖问题，Gridea是一个打包好的程序，不需要另外安装依赖。</p>
+<p>值得注意的是，即使是Gridea，也是必须要在云上才能连接Github，在本地会提示网络问题。查阅资料后，了解到可能是因为本地的DNS不对。云上就没有DNS的问题。</p>
+<p>使用Gridea主要参考了这个网页<br>
+https://zhuanlan.zhihu.com/p/71681116</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://daiyoyo2.github.io/zuoye//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

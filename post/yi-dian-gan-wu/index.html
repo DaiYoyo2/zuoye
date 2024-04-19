@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>一点感悟 | Gridea</title>
+<link rel="shortcut icon" href="https://daiyoyo2.github.io/zuoye//favicon.ico?v=1713506195594">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://daiyoyo2.github.io/zuoye//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="一点感悟 | Gridea - Atom Feed" href="https://daiyoyo2.github.io/zuoye//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="通过学习开源课程，以及做这个作业，最大的感悟就是，软件世界的一切都是人创造的，所以每一个地方都会出问题。这也是各种类型的软件社区存在的原因。
+在开源社区中，可以通过提issue的方式来公开问题的讨论和解决过程，这样可以一定程度上避免重复工作..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://daiyoyo2.github.io/zuoye/">
+  <img class="avatar" src="https://daiyoyo2.github.io/zuoye//images/avatar.png?v=1713506195594" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://daiyoyo2.github.io/zuoye/" class="menu">
+          首页
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              一点感悟
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-04-19
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>通过学习开源课程，以及做这个作业，最大的感悟就是，软件世界的一切都是人创造的，所以每一个地方都会出问题。这也是各种类型的软件社区存在的原因。</p>
+<p>在开源社区中，可以通过提issue的方式来公开问题的讨论和解决过程，这样可以一定程度上避免重复工作。同样的，公布源码也可以让大家都来检查问题。</p>
+<p>最大的感悟就是，在软件开发和使用上，公开的，留底的讨论，非常重要。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://daiyoyo2.github.io/zuoye/post/zi-chan-ding-jie-jie-shao/">
+              <h3 class="post-title">
+                资产定价介绍
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://daiyoyo2.github.io/zuoye//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
